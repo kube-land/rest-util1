@@ -70,8 +70,7 @@ const (
 	StatusReasonServerTimeout StatusReason = "ServerTimeout"
 
 	// StatusReasonTimeout means that the request could not be completed within the given time.
-	// Clients can get this response only when they specified a timeout param in the request,
-	// or if the server cannot complete the operation within a reasonable amount of time.
+	// The server cannot complete the operation within a reasonable amount of time.
 	// Status code 504
 	StatusReasonTimeout StatusReason = "Timeout"
 
