@@ -188,7 +188,7 @@ type Status struct {
 
 // NewFailureStatus creates new failure status with message, StatusReason and details.
 func NewFailureStatus(message string, reason StatusReason, details interface{}) *Status {
-	
+
 	var code int32
 
 	switch reason {
@@ -232,12 +232,12 @@ func NewFailureStatus(message string, reason StatusReason, details interface{}) 
 		code = 503
 	}
 
-	status :=  Status{
-		Status: StatusFailure,
+	status := Status{
+		Status:  StatusFailure,
 		Message: message,
-		Reason: reason,
+		Reason:  reason,
 		Details: details,
-		Code: code,
+		Code:    code,
 	}
 
 	return &status
