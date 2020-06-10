@@ -183,13 +183,13 @@ type Status struct {
 	Details interface{} `json:"details,omitempty"`
 	// Suggested HTTP return code for this status, 0 if not set.
 	// +optional
-	Code int32 `json:"code,omitempty"`
+	Code int `json:"code,omitempty"`
 }
 
 // NewFailureStatus creates new failure status with message, StatusReason and details.
 func NewFailureStatus(message string, reason StatusReason, details interface{}) *Status {
 
-	var code int32
+	var code int
 
 	switch reason {
 	case StatusReasonUnknown:
