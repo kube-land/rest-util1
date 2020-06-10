@@ -1,6 +1,6 @@
 package restutil
 
-// StatusType determins if the operation status type is "Success" or "Failure"
+// StatusType determines if the operation status type is "Success" or "Failure"
 type StatusType string
 
 const (
