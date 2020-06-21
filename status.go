@@ -1,6 +1,7 @@
 package restutil
 
-// StatusType determines if the operation status type is "Success" or "Failure"
+// StatusType determines if the operation status type
+// is "Success" or "Failure".
 type StatusType string
 
 const (
@@ -11,7 +12,7 @@ const (
 )
 
 // StatusReason is a machine-readable description of why this
-// operation is in the "Failure" status
+// operation is in the "Failure" status.
 type StatusReason string
 
 const (
@@ -127,7 +128,8 @@ const (
 	StatusReasonServiceUnavailable StatusReason = "ServiceUnavailable"
 )
 
-// Status is a return value for calls that don't return other objects.
+// Status is a return value for calls that don't return
+// other objects.
 type Status struct {
 	// Status of the operation.
 	// One of: "Success" or "Failure".
