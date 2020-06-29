@@ -150,15 +150,15 @@ type Status struct {
 	Code int `json:"code,omitempty"`
 }
 
-// ErrorStatus is a Status of type error
-type ErrorStatus Status
+// StatusError is a Status of type error
+type StatusError Status
 
-func (status *ErrorStatus) Error() string {
+func (status *StatusError) Error() string {
 	return status.Message
 }
 
 // Error creates new failure status with message and StatusReason.
-func Error(message string, reason StatusReason) *ErrorStatus {
+func Error(message string, reason StatusReason) *StatusError {
 
 	var code int
 
@@ -203,7 +203,7 @@ func Error(message string, reason StatusReason) *ErrorStatus {
 		code = 503
 	}
 
-	status := ErrorStatus{
+	status := StatusError{
 		Status:  StatusFailure,
 		Message: message,
 		Reason:  reason,
@@ -214,7 +214,7 @@ func Error(message string, reason StatusReason) *ErrorStatus {
 }
 
 // ErrorWithDetails creates new failure status with message, StatusReason and details
-func ErrorWithDetails(message string, reason StatusReason, details interface{}) *ErrorStatus {
+func ErrorWithDetails(message string, reason StatusReason, details interface{}) *StatusError {
 	errStatus := Error(message, reason)
 	errStatus.Details = details
 	return errStatus
